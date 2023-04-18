@@ -5,7 +5,9 @@ const config = require('./config');
 
 async function run() {
   try {
-    const myPublicIp = await publicIp.v4();
+    const myPublicIp = await publicIp.v4({
+      onlyHttps: config.queryViaHttps === 'true'
+    });
 
     for (const groupId of config.groupIds) {
       await config.ec2.revokeSecurityGroupIngress({
