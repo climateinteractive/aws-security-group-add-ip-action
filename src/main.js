@@ -37,7 +37,7 @@ async function run() {
       }
 
       const myPublicIp = await publicIp.v4({
-        onlyHttps: config.queryViaHttps === true
+        onlyHttps: config.queryViaHttps === 'true'
       });
       await config.ec2.authorizeSecurityGroupIngress({
         GroupId: group.GroupId,

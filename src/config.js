@@ -19,7 +19,7 @@ const protocol = core.getInput('protocol', { required: false });
 
 // Allow for querying public IP address over HTTPS via the icanhaz or
 // ipify API (instead of DNS lookups)
-const queryViaHttps = core.getBooleanInput('query-via-https', { required: false })
+const queryViaHttps = core.getInput('query-via-https', { required: false })
 
 AWS.config.update({
   region,
