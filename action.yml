@@ -33,6 +33,10 @@ inputs:
     description: 'The descriptipn of your IP permission'
     required: false
     default: 'GitHub Action'
+  query-via-https:
+    description: 'Whether to use HTTPS API service for public IP instead of performing DNS lookup'
+    required: false
+    default: 'false'
 runs:
   using: 'node16'
   main: 'dist/main/index.js'
